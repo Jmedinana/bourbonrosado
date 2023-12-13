@@ -1,0 +1,95 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', serif;
+    background-color: #f4f4f4;
+    color: black;
+}
+
+header {
+    background-color: #000;
+    color: white;
+    padding: 10px 20px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.pantalla-principal img {
+    width: 100%;
+    height: auto;
+}
+
+.info-section {
+    max-width: 1200px; /* O el ancho máximo que prefieras */
+    margin: 40px auto; /* Centra la sección */
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.info-box {
+    width: 45%; /* Ancho de cada cuadro de información */
+    margin: 0 10px; /* Espacio entre los cuadros */
+    padding: 20px;
+    background-color: white; /* Fondo blanco para los cuadros */
+    color: black; /* Texto en color negro */
+    border: 1px solid #ddd;
+}
+
+.info-box h2 {
+    margin-top: 0;
+}
+
+.read-more {
+    text-decoration: none;
+    color: #007bff; /* O el color que prefieras para los enlaces */
+    font-weight: bold;
+}
+
+/* Si quieres que los cuadros se apilen en pantallas más pequeñas: */
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+    }
+    
+    .info-box {
+        width: 100%; /* Cada cuadro toma todo el ancho */
+        margin: 10px 0; /* Espacio arriba y abajo entre los cuadros */
+    }
+}
+
+#login-edicion, #seccion-edicion, section {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    display: none;
+}
+
+#formulario-publicacion {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+#formulario-publicacion input, #formulario-publicacion textarea, #formulario-publicacion button {
+    margin: 10px 0;
+    padding: 10px;
+}
+

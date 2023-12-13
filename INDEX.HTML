@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>B.R.M</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="menu-toggle" onclick="toggleMenu()">≡</a>
+            <div id="dropdown-menu" class="dropdown-content">
+                <a href="#contacto">Contacto</a>
+                <a href="#ediciones">Ediciones</a>
+                <a href="#galeria">Galería</a>
+                <a href="javascript:void(0);" id="edicion">Edición</a>
+            </div>
+            <h1>BOURBON ROSADO</h1>
+        </nav>
+    </header>
+
+    <div class="right-side">
+        <img src="_24466cd4-dcf4-412d-a1ab-a25855d67c9f.jpeg" alt="LOGO MAGAZINE">
+    </div>
+
+    <div class="info-section">
+        <div class="info-box">
+            <h2>El arte de la conexión</h2>
+            <p>En un mundo en constante evolución, el arte de forjar conexiones genuinas sigue siendo atemporal. Ya sea con compañeros, clientes o socios, establecer una relación auténtica allana el camino hacia el éxito de la colaboración.</p>
+            <a href="#" class="read-more">Leer más</a>
+        </div>
+        <div class="info-box">
+            <h2>Más allá del obstáculo</h2>
+            <p>Los retos en los negocios son un hecho, pero es nuestra respuesta a ellos lo que define nuestra trayectoria. Mirando más allá del obstáculo inmediato, existe un reino de oportunidades y aprendizaje.</p>
+            <a href="#" class="read-more">Leer más</a>
+        </div>
+    </div>
+
+    <div id="login-edicion" style="display:none;">
+        <input type="text" id="usuario" placeholder="Usuario">
+        <input type="password" id="contrasena" placeholder="Contraseña">
+        <button onclick="verificarCredenciales()">Iniciar Sesión</button>
+    </div>
+
+    <div id="seccion-edicion" style="display:none;">
+        <h2>Editor de Publicaciones</h2>
+        <form id="formulario-publicacion">
+            <input type="text" id="titulo" placeholder="Título">
+            <textarea id="contenido" placeholder="Contenido"></textarea>
+            <input type="text" id="imagen" placeholder="URL de la Imagen o Video">
+            <input type="text" id="ubicacion" placeholder="Ubicación">
+            <input type="text" id="autor" placeholder="Autor">
+            <button type="button" onclick="agregarPublicacion()">Agregar Publicación</button>
+        </form>
+    </div>
+
+    <section id="contacto" style="display:none;">
+        <h2>CONTACTO</h2>
+        <p>BOURBON ROSADO MAGAZINE recibe a todos los creadores de contenido que quieran ser parte de esta experiencia lejos de la censura de los medios de consumo. Contáctanos por Instagram o TikTok y nuestros asesores te ayudarán a embarcarte en este submundo de las ideas.</p>
+    </section>
+
+    <section id="ediciones" style="display:none;">
+        <h2>EDICIONES</h2>
+        <!-- Contenido de la sección Ediciones -->
+    </section>
+
+    <section id="galeria" style="display:none;">
+        <h2>GALERÍA</h2>
+        <!-- Contenido de la sección Galería -->
+    </section>
+
+    <script src="script.js"></script>
+    
+    function toggleMenu() {
+        var x = document.getElementById("dropdown-menu");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+    
+    document.getElementById('edicion').addEventListener('click', function() {
+        document.getElementById('login-edicion').style.display = 'block';
+    });
+    
+    function verificarCredenciales() {
+        var usuario = document.getElementById('usuario').value;
+        var contrasena = document.getElementById('contrasena').value;
+    
+        if (usuario === "123" && contrasena === "321") {
+            document.getElementById('login-edicion').style.display = 'none';
+            document.getElementById('seccion-edicion').style.display = 'block';
+        } else {
+            alert("Credenciales incorrectas");
+        }
+    }
+    
+    function agregarPublicacion() {
+        var titulo = document.getElementById('titulo').value;
+        var contenido = document.getElementById('contenido').value;
+        var imagen = document.getElementById('imagen').value;
+        var ubicacion = document.getElementById('ubicacion').value;
+        var autor = document.getElementById('autor').value;
+    
+        var seccionPublicaciones = document.getElementById('publicaciones');
+        seccionPublicaciones.innerHTML += '<article><h3>' + titulo + '</h3><img src="' + imagen + '" alt="Imagen"><p>' + contenido + '</p><p>Por ' + autor + ' en ' + ubicacion + '</p></article>';
+    }
+    
+</body>
+</html>
